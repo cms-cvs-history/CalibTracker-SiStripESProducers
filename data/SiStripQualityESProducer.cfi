@@ -1,0 +1,10 @@
+es_module = SiStripQualityESProducer {
+
+    untracked bool PrintDebug=true
+    
+    VPSet ListOfRecordToMerge = {
+	{ string record = "SiStripBadModuleRcd"  string tag = "SiStripBadModule_v1"} ,
+	{ string record = "SiStripBadFiberRcd"   string tag = "SiStripBadFiber_v1"} ,
+	{ string record = "SiStripBadChannelRcd" string tag = "SiStripBadChannel_v1"}
+    }    	
+}
