@@ -1,0 +1,7 @@
+es_module = SiStripGainESProducer {
+
+  	bool AutomaticNormalization=false
+	double NormalizationFactor=1.
+	untracked bool printDebug=false
+
+}
