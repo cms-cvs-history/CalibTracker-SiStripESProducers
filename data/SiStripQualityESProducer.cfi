@@ -1,5 +1,7 @@
 es_module = SiStripQualityESProducer {
 
+    string appendToDataLabel = ""
+    
     VPSet ListOfRecordToMerge = {
 	{ string record = "SiStripBadModuleRcd"  string tag = "SiStripBadModule_v1"} ,
 	{ string record = "SiStripBadFiberRcd"   string tag = "SiStripBadFiber_v1"} ,
