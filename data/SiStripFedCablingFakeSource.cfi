@@ -1,0 +1,4 @@
+es_source = SiStripFedCablingFakeESSource { 
+    FileInPath DetIds = "CalibTracker/SiStripCommon/data/SiStripDetInfo.dat"
+    FileInPath FedIds = "CalibTracker/SiStripCommon/data/SiStripFedIdList.dat"
+}
