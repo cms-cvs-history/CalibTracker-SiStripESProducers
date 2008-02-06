@@ -1,0 +1,4 @@
+es_source = SiStripHashedDetIdFakeESProducer { 
+    FileInPath DetIds = "CalibTracker/SiStripCommon/data/SiStripDetInfo.dat"
+}
+
