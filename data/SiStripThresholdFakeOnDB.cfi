@@ -1,0 +1,8 @@
+module siStripThresholdFakeOnDB = SiStripThresholdFakeOnDB{
+
+    #cards relevant to mother class
+    bool SinceAppendMode = true
+    string IOVMode	     = "Run"
+    string Record        = "SiStripThresholdRcd"
+    bool doStoreOnDB     = true
+}

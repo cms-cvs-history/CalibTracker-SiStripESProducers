@@ -1,0 +1,6 @@
+es_source = SiStripThresholdFakeESSource { 
+
+	FileInPath file = "CalibTracker/SiStripCommon/data/SiStripDetInfo.dat"
+        double LowTh = 2.0
+        double HighTh = 5.0
+}
