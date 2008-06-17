@@ -1,1 +1,3 @@
-es_source = SiStripQualityFakeESSource { }
+es_source siStripQualityFakeESSource = SiStripQualityFakeESSource { 
+    string appendToDataLabel =""
+}
