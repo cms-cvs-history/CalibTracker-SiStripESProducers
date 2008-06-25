@@ -1,4 +1,6 @@
-es_source = SiStripLAFakeESSource { 
+es_source siStripLAFakeESSource = SiStripLAFakeESSource { 
+
+        string appendToDataLabel = ""
 
 	FileInPath file = "CalibTracker/SiStripCommon/data/SiStripDetInfo.dat"
         double AppliedVoltage = 150.
