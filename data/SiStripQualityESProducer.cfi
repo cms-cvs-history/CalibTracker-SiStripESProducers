@@ -1,4 +1,4 @@
-es_module = SiStripQualityESProducer {
+es_module siStripQualityESProducer = SiStripQualityESProducer {
 
     string appendToDataLabel = ""
     
