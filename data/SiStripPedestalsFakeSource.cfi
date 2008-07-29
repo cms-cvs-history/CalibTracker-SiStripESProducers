@@ -1,4 +1,4 @@
-es_source = SiStripPedestalsFakeESSource { 
+es_source siStripPedestalsFakeESSource = SiStripPedestalsFakeESSource { 
     
     untracked bool   printDebug = false
     
