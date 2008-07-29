@@ -1,4 +1,4 @@
-es_module = SiStripQualityESProducer {
+es_module siStripQualityESProducer = SiStripQualityESProducer {
 
     string appendToDataLabel = ""
     
@@ -7,4 +7,11 @@ es_module = SiStripQualityESProducer {
 	{ string record = "SiStripBadFiberRcd"   string tag = "SiStripBadFiber_v1"} ,
 	{ string record = "SiStripBadChannelRcd" string tag = "SiStripBadChannel_v1"}
     }    	
+
+   #To reduce the granularity of badcomponents to at least an APV
+   #change the following boolean in true, and modify the threshold 
+   #Threshold value=minimum number of bad strips requested in an apv to define bad the full apv	 
+   untracked bool ReduceGranularity = false
+   untracked double ThresholdForReducedGranularity  =  0.3  
+	
 }
