@@ -34,18 +34,8 @@ process.maxEvents = cms.untracked.PSet(
 #         )
 #     )
 
-process.load("CalibTracker.SiStripESProducers.SiStripBadStripFakeESSource_cfi")
-process.load("CalibTracker.SiStripESProducers.SiStripBadChannelFakeESSource_cfi")
-process.load("CalibTracker.SiStripESProducers.SiStripBadFiberFakeESSource_cfi")
-process.load("CalibTracker.SiStripESProducers.SiStripBadModuleFakeESSource_cfi")
-
-process.load("CalibTracker.SiStripESProducers.SiStripQualityESProducer_cfi")
-process.siStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
-     cms.PSet( record = cms.string("SiStripBadStripRcd"), tag    = cms.string("") ),
-     cms.PSet( record = cms.string("SiStripBadChannelRcd"), tag    = cms.string("") ),
-     cms.PSet( record = cms.string("SiStripBadFiberRcd"),   tag    = cms.string("") ),
-     cms.PSet( record = cms.string("SiStripBadModuleRcd"),   tag    = cms.string("") )
-)
+process.load("CalibTracker.Configuration.Tracker_FakeConditions_cff")
+process.load("CalibTracker.Configuration.Tracker_DependentRecords_forGlobalTag_cff")
 
 process.thistest = cms.EDProducer("testSiStripQualityESProducer",
     printDebug = cms.untracked.bool(True),
