@@ -11,7 +11,7 @@ es_module siStripQualityESProducer = SiStripQualityESProducer {
    #To reduce the granularity of badcomponents to at least an APV
    #change the following boolean in true, and modify the threshold 
    #Threshold value=minimum number of bad strips requested in an apv to define bad the full apv	 
-    bool ReduceGranularity = false
+    bool ReduceGranularity = true
     double ThresholdForReducedGranularity  =  0.3  
 	
 }
