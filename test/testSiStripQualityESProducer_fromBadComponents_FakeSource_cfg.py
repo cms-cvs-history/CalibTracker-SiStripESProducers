@@ -11,10 +11,10 @@ process.MessageLogger = cms.Service("MessageLogger",
 )
 
 process.source = cms.Source("EmptyIOVSource",
-    lastRun = cms.untracked.uint32(100),
+    lastValue = cms.uint64(100),
     timetype = cms.string('runnumber'),
-    firstRun = cms.untracked.uint32(1),
-    interval = cms.uint32(90)
+    firstValue = cms.uint64(1),
+    interval = cms.uint64(90)
 )
 
 process.maxEvents = cms.untracked.PSet(
