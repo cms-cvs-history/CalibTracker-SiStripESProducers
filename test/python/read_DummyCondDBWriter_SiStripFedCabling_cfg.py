@@ -34,7 +34,7 @@ process.poolDBESSource = cms.ESSource("PoolDBESSource",
         authenticationPath = cms.untracked.string('/afs/cern.ch/cms/DB/conddb')
     ),
     timetype = cms.untracked.string('runnumber'),
-    connect = cms.string('sqlite_file:dummy2.db'),
+    connect = cms.string('sqlite_file:dbfile.db'),
     toGet = cms.VPSet(cms.PSet(
         record = cms.string('SiStripFedCablingRcd'),
         tag = cms.string('SiStripFedCabling_Fake_30X')
