@@ -1,4 +1,0 @@
-include "CalibTracker/SiStripESProducers/data/SiStripFedCablingESSourceFromGeom.cfi"
-include "Geometry/TrackerRecoData/data/trackerRecoGeometryXML.cfi"
-include "Geometry/TrackerGeometryBuilder/data/trackerGeometry.cfi"
-include "Geometry/TrackerNumberingBuilder/data/trackerNumberingGeometry.cfi"
