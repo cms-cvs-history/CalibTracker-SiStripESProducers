@@ -1,6 +1,0 @@
-es_source = SiStripGainFakeESSource { 
-
-	FileInPath file = "CalibTracker/SiStripCommon/data/SiStripDetInfo.dat"
-
-}
-
