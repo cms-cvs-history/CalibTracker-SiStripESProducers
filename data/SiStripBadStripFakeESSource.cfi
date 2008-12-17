@@ -1,3 +1,0 @@
-es_source siStripBadStripFakeESSource = SiStripBadStripFakeESSource { 
-    string appendToDataLabel =""
-}
