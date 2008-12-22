@@ -6,17 +6,17 @@
 
 import FWCore.ParameterSet.Config as cms
 
-process = cms.Process("Builder")
+process = cms.Process("Reader")
 
 process.MessageLogger = cms.Service("MessageLogger",
     debugModules = cms.untracked.vstring(''),
-    LorentzAngleBuilder = cms.untracked.PSet(
+    LorentzAngleReader = cms.untracked.PSet(
         threshold = cms.untracked.string('INFO')
     ),
     cout = cms.untracked.PSet(
         threshold = cms.untracked.string('INFO')
     ),
-    destinations = cms.untracked.vstring('LorentzAngleBuilder.log')
+    destinations = cms.untracked.vstring('LorentzAngleReader.log')
 )
 
 process.maxEvents = cms.untracked.PSet(
@@ -27,31 +27,25 @@ process.source = cms.Source("EmptySource",
     firstRun = cms.untracked.uint32(1)
 )
 
-process.load("CalibTracker.SiStripESProducers.fake.SiStripLorentzAngleFakeESSource_cfi")
-process.load("CalibTracker.SiStripESProducers.DBWriter.SiStripLorentzAngleDummyDBWriter_cfi")
-
-process.PoolDBOutputService = cms.Service("PoolDBOutputService",
-    BlobStreamerName = cms.untracked.string('TBufferBlobStreamingService'),
-    DBParameters = cms.PSet(
+process.poolDBESSource = cms.ESSource("PoolDBESSource",
+   BlobStreamerName = cms.untracked.string('TBufferBlobStreamingService'),
+   DBParameters = cms.PSet(
         messageLevel = cms.untracked.int32(2),
         authenticationPath = cms.untracked.string('/afs/cern.ch/cms/DB/conddb')
     ),
     timetype = cms.untracked.string('runnumber'),
-<<<<<<< DummyCondDBWriter_SiStripLorentzAngle_cfg.py
     connect = cms.string('sqlite_file:LA_test_dummy.db'),
-=======
-    connect = cms.string('sqlite_file:dbfile.db'),
->>>>>>> 1.2
-    toPut = cms.VPSet(cms.PSet(
+    toGet = cms.VPSet(cms.PSet(
         record = cms.string('SiStripLorentzAngleRcd'),
         tag = cms.string('SiStripLorentzAngle_Fake_30X')
     ))
 )
 
-process.SiStripLorentzAngleGenerator.TIB_EstimatedValue = cms.double(0.0174)
-process.SiStripLorentzAngleGenerator.TOB_EstimatedValue = cms.double(0.0222)
-process.SiStripLorentzAngleGenerator.PerCent_Err = cms.double(20)
+process.reader = cms.EDFilter("SiStripLorentzAngleReader",
+                              printDebug = cms.untracked.bool(True)
+                              )
 
-process.p1 = cms.Path(process.siStripLorentzAngleDummyDBWriter)
+
+process.p1 = cms.Path(process.reader)
 
 
