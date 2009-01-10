@@ -1,9 +1,0 @@
-es_source siStripLAFakeESSource = SiStripLAFakeESSource { 
-
-        string appendToDataLabel = ""
-
-	FileInPath file = "CalibTracker/SiStripCommon/data/SiStripDetInfo.dat"
-        double   TIB_EstimatedValue         = 0.024
-        double   TOB_EstimatedValue         = 0.030
-        double   PerCent_Err		    = 20
-}
