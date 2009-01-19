@@ -34,12 +34,13 @@ process.poolDBESSource = cms.ESSource("PoolDBESSource",
         authenticationPath = cms.untracked.string('/afs/cern.ch/cms/DB/conddb')
     ),
     timetype = cms.untracked.string('runnumber'),
-    connect = cms.string('sqlite_file:dbfile.db'),
+    connect = cms.string('oracle:cms_orcoff_prod/CMS_COND_21X_STRIP'),
     toGet = cms.VPSet(cms.PSet(
         record = cms.string('SiStripApvGainRcd'),
-        tag = cms.string('SiStripApvGain_Fake_30X')
+        tag = cms.string('SiStripGain_CRAFT_21X_v2_offline')
     ))
 )
+
 
 process.reader = cms.EDFilter("SiStripApvGainReader",
                               printDebug = cms.untracked.uint32(5)
