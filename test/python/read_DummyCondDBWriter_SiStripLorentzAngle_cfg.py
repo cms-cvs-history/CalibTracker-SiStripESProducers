@@ -34,11 +34,7 @@ process.poolDBESSource = cms.ESSource("PoolDBESSource",
         authenticationPath = cms.untracked.string('/afs/cern.ch/cms/DB/conddb')
     ),
     timetype = cms.untracked.string('runnumber'),
-<<<<<<< read_DummyCondDBWriter_SiStripLorentzAngle_cfg.py
-    connect = cms.string('sqlite_file:LA_test_dummy.db'),
-=======
     connect = cms.string('sqlite_file:dbfile.db'),
->>>>>>> 1.2
     toGet = cms.VPSet(cms.PSet(
         record = cms.string('SiStripLorentzAngleRcd'),
         tag = cms.string('SiStripLorentzAngle_Fake_30X')
