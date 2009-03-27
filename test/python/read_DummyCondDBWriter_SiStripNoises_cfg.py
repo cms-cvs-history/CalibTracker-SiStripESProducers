@@ -37,7 +37,7 @@ process.poolDBESSource = cms.ESSource("PoolDBESSource",
     connect = cms.string('sqlite_file:dbfile.db'),
     toGet = cms.VPSet(cms.PSet(
         record = cms.string('SiStripNoisesRcd'),
-        tag = cms.string('SiStripNoises_Fake_30X')
+        tag = cms.string('SiStripNoises_Ideal_DecMode_31X')
     ))
 )
 
