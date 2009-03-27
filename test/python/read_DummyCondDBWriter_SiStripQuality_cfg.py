@@ -36,6 +36,8 @@ process.poolDBESSource = cms.ESSource("PoolDBESSource",
     timetype = cms.untracked.string('runnumber'),
     connect = cms.string('sqlite_file:dbfile.db'),
     toGet = cms.VPSet(
+    cms.PSet(record = cms.string('SiStripModuleHVRcd'),tag = cms.string('SiStripModuleHVOff_Fake_30X')),
+    cms.PSet(record = cms.string('SiStripModuleLVRcd'),tag = cms.string('SiStripModuleLVOff_Fake_30X')),
     cms.PSet(record = cms.string('SiStripBadModuleRcd'),tag = cms.string('SiStripBadModule_Fake_30X')),
     cms.PSet(record = cms.string('SiStripBadFiberRcd'),tag = cms.string('SiStripBadFiber_Fake_30X')),
     cms.PSet(record = cms.string('SiStripBadChannelRcd'),tag = cms.string('SiStripBadChannel_Fake_30X'))
@@ -44,6 +46,8 @@ process.poolDBESSource = cms.ESSource("PoolDBESSource",
 
 process.load("CalibTracker.SiStripESProducers.SiStripQualityESProducer_cfi")
 process.siStripQualityESProducer.ListOfRecordToMerge = cms.VPSet(
+     cms.PSet( record = cms.string("SiStripModuleHVRcd"), tag    = cms.string("") ),
+     cms.PSet( record = cms.string("SiStripModuleLVRcd"), tag    = cms.string("") ),
      cms.PSet( record = cms.string("SiStripBadChannelRcd"), tag    = cms.string("") ),
      cms.PSet( record = cms.string("SiStripBadFiberRcd"),   tag    = cms.string("") ),
      cms.PSet( record = cms.string("SiStripBadModuleRcd"),  tag    = cms.string("") ),
