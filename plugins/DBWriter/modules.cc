@@ -94,9 +94,6 @@ DEFINE_ANOTHER_FWK_MODULE(SiStripThresholdDummyPrinter);
 typedef DummyCondObjPrinter<SiStripLorentzAngle,SiStripLorentzAngleRcd> SiStripLorentzAngleDummyPrinter;
 DEFINE_ANOTHER_FWK_MODULE(SiStripLorentzAngleDummyPrinter);
 
-typedef DummyCondObjPrinter<SiStripLorentzAngle,SiStripLorentzAngleSimRcd> SiStripLorentzAngleSimDummyPrinter;
-DEFINE_ANOTHER_FWK_MODULE(SiStripLorentzAngleSimDummyPrinter);
-
 typedef DummyCondObjPrinter<SiStripPedestals,SiStripPedestalsRcd> SiStripPedestalsDummyPrinter;
 DEFINE_ANOTHER_FWK_MODULE(SiStripPedestalsDummyPrinter);
 
