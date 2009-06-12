@@ -9,14 +9,17 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("Reader")
 
 process.MessageLogger = cms.Service("MessageLogger",
-    debugModules = cms.untracked.vstring(''),
-    CablingReader = cms.untracked.PSet(
+    debugModules = cms.untracked.vstring("*"),
+    DetCablingReaderSummary = cms.untracked.PSet(
         threshold = cms.untracked.string('INFO')
+    ),
+    DetCablingReaderDebug = cms.untracked.PSet(
+        threshold = cms.untracked.string('DEBUG')
     ),
     cout = cms.untracked.PSet(
         threshold = cms.untracked.string('INFO')
     ),
-    destinations = cms.untracked.vstring('DetCablingReader.log')
+    destinations = cms.untracked.vstring('DetCablingReaderSummary', 'DetCablingReaderDebug')
 )
 
 process.maxEvents = cms.untracked.PSet(
@@ -24,7 +27,7 @@ process.maxEvents = cms.untracked.PSet(
 )
 process.source = cms.Source("EmptySource",
     numberEventsInRun = cms.untracked.uint32(1),
-    firstRun = cms.untracked.uint32(1)
+    firstRun = cms.untracked.uint32(66469)
 )
 
 process.load('Configuration/StandardSequences/FrontierConditions_GlobalTag_cff')
