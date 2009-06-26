@@ -37,12 +37,15 @@ process.poolDBESSource = cms.ESSource("PoolDBESSource",
     connect = cms.string('sqlite_file:dbfile.db'),
     toGet = cms.VPSet(cms.PSet(
         record = cms.string('SiStripLorentzAngleRcd'),
-        tag = cms.string('SiStripLorentzAngle_IdealSim_31X')
+        tag = cms.string('SiStripLorentzAngle_StartUp_31X')
     ))
 )
 
-process.reader = cms.EDFilter("SiStripLorentzAngleReader",
-                              printDebug = cms.untracked.uint32(10)
+# process.reader = cms.EDFilter("SiStripLorentzAngleReader",
+#                               printDebug = cms.untracked.uint32(10)
+#                               )
+process.reader = cms.EDFilter("SiStripLorentzAngleDummyPrinter",
+                              printDebug = cms.untracked.uint32(5)
                               )
 
 
