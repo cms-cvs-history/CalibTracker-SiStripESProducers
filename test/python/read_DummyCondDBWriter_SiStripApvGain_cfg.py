@@ -37,13 +37,11 @@ process.poolDBESSource = cms.ESSource("PoolDBESSource",
     connect = cms.string('sqlite_file:dbfile.db'),
     toGet = cms.VPSet(cms.PSet(
         record = cms.string('SiStripApvGainRcd'),
-        tag = cms.string('SiStripApvGain_Ideal_31X')
+        tag = cms.string('SiStripApvGain_StartUp_31X')
     ))
 )
 
-process.reader = cms.EDFilter("SiStripApvGainReader",
-                              printDebug = cms.untracked.uint32(5)
-                              )
+process.reader = cms.EDFilter("SiStripApvGainReader")
 
 
 process.p1 = cms.Path(process.reader)
