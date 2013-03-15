@@ -19,7 +19,6 @@
 #include "CLHEP/Random/RandFlat.h"
 #include "CLHEP/Random/RandGauss.h"
 
-class TrackerTopology;
 /**
  * Produces a noise tag using the same settings as the service used in the DummyDBWriter, but
  * it receives a SiStripApvGain tag from the EventSetup and uses the gain values (per apv) to
@@ -38,7 +37,7 @@ class SiStripNoiseNormalizedWithApvGainBuilder : public edm::EDAnalyzer
 
  private:
   /// Given the map and the detid it returns the corresponding layer/ring
-  std::pair<int, int> subDetAndLayer(const uint32_t detit, const TrackerTopology* tTopo) const;
+  std::pair<int, int> subDetAndLayer(const uint32_t detit) const;
   /// Fills the parameters read from cfg and matching the name in the given map
   void fillParameters(std::map<int, std::vector<double> > & mapToFill, const std::string & parameterName) const;
   /**
